@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height: 50px;
+            border: gray 1px solid;
+            padding-left: 10px;
+        }
+
+        #box2 {
+            width: 300px;
+            height: 50px;
+            padding-left: 10px;
+            border: gray 1px solid;
+        }
+
+        #input1 {
+            margin-left: 10px;
+            width: 200px;
+            height: 50px;
+            background: none;
+            outline: none;
+            border: none;
+            font: 20px black solid;
+        }
+
+        #input2 {
+            padding-left: 10px;
+            width: 200px;
+            height: 50px;
+            background: none;
+            outline: none;
+            border: none;
+            font: 20px black solid;
+        }
+
+        #text1 {
+            font-size: 13px;
+            line-height: 50px;
+            display: block;
+            text-align: center;
+            float: left;
+        }
+
+        #text2 {
+            font-size: 13px;
+            line-height: 50px;
+            display: block;
+            text-align: center;
+            float: left;
+        }
+
+        #tip1 {
+            width: 300px;
+            margin-top: 10px;
+            height: 30px;
+            font-size: 13px;
+        }
+
+        #tip2 {
+            width: 300px;
+            margin-top: 10px;
+            height: 30px;
+            font-size: 13px;
+        }
+
+        #button {
+            background-color: red;
+            width: 310px;
+            height: 50px;
+            color: white;
+        }
+
+        #one {
+            float: left;
+            margin-top:100px;
+            margin-left:300px;
+        }
+
+        #two {
+            float: left;
+            height: 200px;
+            width: 300px;
+            margin-top:100px;
+            
+        }
+
+        #text3 {
+            color: red;
+            font-size: 15px;
+        }
+
+        #text4 {
+            color: red;
+            font-size: 15px;
+        }
+
+        #text5 {
+            color: red;
+            font-size: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding-left: 60px;
+            margin-bottom: 65px;
+        }
+
+        #button {
+            background-color: red;
+            width: 310px;
+            height: 50px;
+            color: white;
+        }
+   
+    </style>
+</head>
+
+<body>
+
+    <div id="one">
+        <form class="form">
+            <div id="box1">
+                <div id="center"><span id="text1">用&nbsp;&nbsp;户&nbsp;&nbsp;名</span></div>&nbsp;&nbsp;<input type="text"
+                    id="input1" />
+            </div>
+            <div id="tip1"><span></span></div>
+            <div id="box2">
+                <span id="text2">登录密码</span>&nbsp;&nbsp;<input type="password" id="input2" />
+            </div>
+            <div id="tip2"><span></span></div>
+            <input id="button" type="button" value="立即登录">
+        </form>
+    </div>
+    <div id="two">
+        <ul>
+            <li><span id="text3"></span></li>
+            <li id="text4"></li>
+            <li id="text5"></li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var button = document.getElementById("button");
+    var tip1 = document.getElementById("tip1");
+    var tip2 = document.getElementById("tip2");
+    var text3 = document.getElementById("text3");
+    var text4 = document.getElementById("text4");
+    var text5 = document.getElementById("text5");
+    input1.onfocus = function () {
+        var text = "支持中文数字";
+        tip1.innerHTML = text;
+    }
+    input1.onblur = function () {
+        if (input1.value != "") {
+            tip1.innerHTML = "";
+        } else {
+            var text = "用户名不能为空";
+            tip1.innerHTML = text;
+        }
+    }
+    input2.onfocus = function () {
+        var text = "建议使用两种字符组合";
+        tip2.innerHTML = text;
+    }
+    input2.onblur = function () {
+        if (input2.value != "") {
+            tip2.innerHTML = "";
+        } else {
+            var text = "用户名不能为空";
+            tip2.innerHTML = text;
+        }
+    }
+    button.onclick = function () {
+        var str1 = "登录成功！";
+        text3.innerHTML = str1;
+        text4.innerHTML = "用户名：" + input1.value;
+        text5.innerHTML = "密码：" + input2.value;
+    }
+</script>
+
+</html>
